@@ -1,0 +1,103 @@
+:root, html, * {
+    cursor: none;
+}
+
+body {
+    --bg: #121212;
+    --text: #ffffff;
+    --accent: #ecc903;
+    --title-font: "JetBrains Mono";
+    --text-font: "DIN Alternate";
+
+    background-color: var(--bg);
+    font-family: var(--text-font);
+    font-size: 1.5rem;
+    color: var(--text);
+    overflow-x: hidden;
+    scrollbar-color: var(--accent) black;
+}
+
+h1 {
+    color: var(--accent);
+    font-family: var(--title-font);
+    font-size: 20rem;
+    user-select: none;
+    transform: translate(20px, 0px) rotate(-3deg);
+    animation: flyIn 1.25s cubic-bezier(.17,.77,.33,1);
+    animation-delay: 0.2s;
+    
+    transition: transform 0.3s cubic-bezier(.17,.77,.33,1);
+}
+
+h1:hover {
+    /* background-color: red; */
+    transform: translate(-5vw, 0px) rotate(-2deg) scale(1.025);
+    transition: transform 0.45s cubic-bezier(.12,.37,0,.98);
+    cursor: pointer;
+}
+
+header {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cursor {
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg);
+    z-index: 9999; /* Ensures it stays on top of all other content */
+
+    animation: fadeFromBlack 0.6s ease-in-out forwards;
+    animation-delay: 0.2s;
+    pointer-events: none; 
+
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem;
+}
+
+h2 {
+    font-family: var(--text-font);
+    font-size: 2em;
+    color: var(--accent);
+}
+
+.math {
+    font-family: "STIX Two Math";
+    color: var(--accent);
+}
+
+@keyframes fadeFromBlack {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translate(20vw, -2vh) rotate(-6deg) scale(0.95);
+  }
+  100% {
+    transform: translate(20px, 0px) rotate(-3deg);
+  }
+}
