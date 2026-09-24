@@ -20,22 +20,31 @@ body {
     scrollbar-color: var(--accent) black;
 }
 
+.title-wrapper {
+    transform: translate(20px, 0px) rotate(-3deg);
+    
+    transition: transform 1s cubic-bezier(.17,.77,.33,1);
+}
+
 h1 {
     color: var(--accent);
     font-family: var(--title-font);
     font-size: 20rem;
     user-select: none;
-    transform: translate(20px, 0px) rotate(-3deg);
-    animation: flyIn 1.25s cubic-bezier(.17,.77,.33,1);
-    animation-delay: 0.2s;
+    transform: translate(0px, 0px) rotate(0deg);
     
-    transition: transform 1s cubic-bezier(.17,.77,.33,1);
+    transition: letter-spacing 1s cubic-bezier(.17,.77,.33,1), scale 1s cubic-bezier(.17,.77,.33,1);
 }
 
 h1:hover {
     /* background-color: red; */
-    transform: translate(-5vw, 0px) rotate(-2deg) scale(1.025);
-    transition: transform 0.5s cubic-bezier(.12,.37,0,.98);
+    letter-spacing: -0.1em;
+    scale: 1.075;
+    transition: letter-spacing 0.5s cubic-bezier(.12,.37,0,.98), scale 0.7s cubic-bezier(.12,.37,0,.98);
+}
+
+body:has(h1:hover) #cursor {
+    scale: 1.75;
 }
 
 header {
@@ -58,7 +67,7 @@ header {
     top: calc(var(--pos-y) - 7.5px);
     left: calc(var(--pos-x) - 7.5px);
     pointer-events: none;
-    transition: all 0.025s ease-out;
+    transition: all 0.025s ease-out, scale 0.25s;
     z-index: 10;
 }
 
@@ -115,7 +124,7 @@ p {
     width: 100%;
     padding: 1rem;
     text-align: center;
-    line-height: 1.4;
+    line-height: 2;
 }
 
 .math {
@@ -138,8 +147,7 @@ p {
     font-family: var(--title-font);
     color: #1b1b1b;
     font-size: 12rem;
-    letter-spacing: -5;
-    transform: rotate(-2deg);
+    letter-spacing: -3px;
 }
 
 a {

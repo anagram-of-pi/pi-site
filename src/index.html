@@ -1,9 +1,19 @@
-<link rel="stylesheet" href="style.css">
-<title>3.14159265359 - Pi!</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>3.14159265359 - Pi!</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><rect width='100' height='100' fill='red'/></svg>">
+</head>
 <body>
     <div id="cursor"></div>
     <div id="fade"></div>
-    <header><h1>3.14159265359</h1></header>
+    <header>
+        <div class="title-wrapper">
+            <h1>3.14159265359</h1>
+        </div>
+    </header>
     
     <section id="what-is">
         <h2>What is <span class="math">π</span>?</h2>
@@ -22,7 +32,7 @@
         <p>Again, most people can tell you that <span class="math">π</span> is equal to circumference over diameter. But where does it really come from? Why does that always give the same number?</p>
 
         <h3>How do we approximate <span class="math">π</span>?</h2>
-        <p>The first ever real attempt at approximating π was done by Archimedes, now called "Archimedes' Polygon Approximation." There are many others now that are able to calculate millions of digits in seconds, however Archimedes gives a fairly intuitive way of calculating it.</p>
+        <p>The first ever real attempt at approximating <span class="math">π</span> was done by Archimedes, now called "Archimedes' Polygon Approximation." There are many others now that are able to calculate millions of digits in seconds, however Archimedes gives a fairly intuitive way of calculating it.</p>
         <p>For more information on Archimedes' polygon approximation, see <a href="https://www.craig-wood.com/nick/articles/pi-archimedes/">this article</a> by Nick Craig-Wood. You can use this visual (below) to play around with the approximation.</p>
         <iframe src="https://www.desmos.com/calculator/fgvxqyerdv?embed" width="1000" height="500" style="border: 2px solid var(--accent); border-radius: 25px;" frameborder=0></iframe>
     </section>
@@ -46,3 +56,4 @@
     
     <script src="script.js"></script>
 </body>
+</html>
