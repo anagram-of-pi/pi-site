@@ -1,9 +1,6 @@
 document.addEventListener("mousemove", (e) => {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
-    if (Number.isNaN(mouseX)) {
-        console.log(e)
-    }
     let cursor = document.getElementById("cursor");
     cursor.style.setProperty("--pos-x", mouseX + "px");
     cursor.style.setProperty("--pos-y", mouseY + "px");
@@ -11,7 +8,7 @@ document.addEventListener("mousemove", (e) => {
 
 
 // Check if page has been scrolled in three seconds
-hasScrolled = false;
+let hasScrolled = false;
 
 function handleScroll() {
     hasScrolled = true;
