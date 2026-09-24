@@ -1,4 +1,7 @@
-:root, html, * {
+:root, html, #cursor, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     cursor: none;
 }
 
@@ -6,8 +9,8 @@ body {
     --bg: #121212;
     --text: #ffffff;
     --accent: #ecc903;
-    --title-font: "JetBrains Mono";
-    --text-font: "DIN Alternate";
+    --title-font: "JetBrains Mono", monospace;
+    --text-font: "Verdana", "DIN Alternate", sans-serif;
 
     background-color: var(--bg);
     font-family: var(--text-font);
@@ -26,14 +29,13 @@ h1 {
     animation: flyIn 1.25s cubic-bezier(.17,.77,.33,1);
     animation-delay: 0.2s;
     
-    transition: transform 0.3s cubic-bezier(.17,.77,.33,1);
+    transition: transform 1s cubic-bezier(.17,.77,.33,1);
 }
 
 h1:hover {
     /* background-color: red; */
     transform: translate(-5vw, 0px) rotate(-2deg) scale(1.025);
-    transition: transform 0.45s cubic-bezier(.12,.37,0,.98);
-    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(.12,.37,0,.98);
 }
 
 header {
@@ -45,10 +47,19 @@ header {
 }
 
 #cursor {
+    --pos-x: 0px;
+    --pos-y: 0px;
     width: 15px;
     aspect-ratio: 1;
     border-radius: 50%;
+    border: 2px solid black;
     background-color: var(--accent);
+    position: fixed;
+    top: calc(var(--pos-y) - 7.5px);
+    left: calc(var(--pos-x) - 7.5px);
+    pointer-events: none;
+    transition: all 0.025s ease-out;
+    z-index: 10;
 }
 
 #fade {
@@ -68,20 +79,78 @@ header {
 
 section {
     width: 100%;
-    min-height: 100vh;
+    min-height: 20vh;
     padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-h2 {
+h2, h3 {
+    width: 100%;
+    margin-top: 3rem;
+    text-align: center;
     font-family: var(--text-font);
-    font-size: 2em;
+    font-size: 3em;
     color: var(--accent);
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h2::after {
+    content: "";
+    background-color: var(--accent);
+    width: 4em;
+    height: 3px;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    transform: skew(40deg, -1deg);
+}
+
+p {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    line-height: 1.4;
 }
 
 .math {
-    font-family: "STIX Two Math";
+    font-family: math, "STIX Two Math";
     color: var(--accent);
 }
+
+.pi-block {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+}
+
+.pi-block::after {
+    content: "3.14159265359";
+    width: 80vw;
+    margin: auto;
+    display: block;
+    overflow: hidden;
+    font-family: var(--title-font);
+    color: #1b1b1b;
+    font-size: 12rem;
+    letter-spacing: -5;
+    transform: rotate(-2deg);
+}
+
+a {
+    color: var(--accent);
+}
+
+iframe {
+    margin-top: 4rem;
+}
+
+
 
 @keyframes fadeFromBlack {
   0% {
